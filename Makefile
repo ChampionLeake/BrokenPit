@@ -17,7 +17,7 @@ build/brokenpit.elf: brokenpit.s
 	$(PREFIX)gcc -x assembler-with-cpp -nostartfiles -nostdlib -g -o $@ $< $(DEFINES)
 
 build/pit.bin: build/brokenpit.elf
-	arm-none-eabi-objcopy -O binary $< $@
+	$(PREFIX)objcopy -O binary $< $@
 
 clean:
 	rm -rf build/
